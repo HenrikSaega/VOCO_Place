@@ -1,0 +1,28 @@
+<div class="ui-layer">
+    <h1>{{title}}</h1>
+    <div class="status-bar">
+        <span id="cooldownText" class="cooldown-badge">Saad värvida!</span>
+    </div>
+</div>
+
+<button id="recenterBtn"
+    style="margin-left: 10px; padding: 8px 15px; cursor: pointer; background: #3498db; color: white; border: none; border-radius: 5px; font-weight: bold; pointer-events: auto;">KESKKOHT</button>
+
+<div id="viewport" class="viewport">
+    <canvas id="board" width="1000" height="1000" data-size="{{boardSize}}"></canvas>
+</div>
+
+<div id="colorModal" class="modal hidden">
+    <h3>Vali värv</h3>
+    <div class="palette">
+        <button class="color-btn" style="background-color: #FF4500;" data-color="#FF4500"></button>
+        <button class="color-btn" style="background-color: #FFA800;" data-color="#FFA800"></button>
+        <button class="color-btn" style="background-color: #FFD635;" data-color="#FFD635"></button>
+        <button class="color-btn" style="background-color: #00A368;" data-color="#00A368"></button>
+        <button class="color-btn" style="background-color: #3690EA;" data-color="#3690EA"></button>
+        <button class="color-btn" style="background-color: #B44AC0;" data-color="#B44AC0"></button>
+        <button class="color-btn" style="background-color: #000000;" data-color="#000000"></button>
+        <button class="color-btn" style="background-color: #FFFFFF;" data-color="#FFFFFF"></button>
+    </div>
+    <button id="closeModal">Tühista</button>
+</div>

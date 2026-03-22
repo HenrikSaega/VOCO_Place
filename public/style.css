@@ -1,0 +1,76 @@
+body { 
+    margin: 0; 
+    overflow: hidden; /* Keelame brauseri tavalise kerimise */
+    background: #1a1a1a; 
+    font-family: sans-serif;
+    color: white;
+    user-select: none; /* Et teksti kogemata ei selekteeriks lohistades */
+}
+
+/* UI hõljub ekraani keskel üleval */
+.ui-layer {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    pointer-events: none; /* Klikid lähevad siit läbi lõuendile */
+    z-index: 10;
+}
+
+.cooldown-badge {
+    color: #2ecc71; 
+    background: rgba(0,0,0,0.8); 
+    padding: 8px 15px; 
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* See on meie "aken", mis katab tervet ekraani */
+.viewport {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    cursor: grab;
+}
+
+.viewport:active {
+    cursor: grabbing;
+}
+
+canvas { 
+    position: absolute;
+    /* Eemaldame top: 50%, left: 50% ja miinus-marginid */
+    top: 0;
+    left: 0;
+    background: white; 
+    box-shadow: 0 4px 50px rgba(0,0,0,0.5); 
+    image-rendering: pixelated; 
+    transform-origin: 0 0; /* Väga tähtis: suumime ülemisest vasakust nurgast */
+}
+
+/* Modaal ja nupud */
+.hidden { display: none !important; }
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid #ecf0f1;
+    z-index: 20;
+}
+
+.palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.color-btn { width: 45px; height: 45px; border: 2px solid rgba(255,255,255,0.3); border-radius: 5px; cursor: pointer; transition: transform 0.1s; }
+.color-btn:hover { transform: scale(1.1); border-color: white; }
+#closeModal { padding: 10px; background: #e74c3c; border: none; color: white; font-weight: bold; border-radius: 5px; cursor: pointer; }
